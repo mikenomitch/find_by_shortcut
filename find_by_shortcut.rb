@@ -1,5 +1,7 @@
 class ActiveRecord::Base
 
+  # Open the eigenclass of ActiveRecord::Base because we need to alias a static
+  # method.
   class << ActiveRecord::Base
     alias_method :f, :find
   end
