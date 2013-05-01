@@ -1,4 +1,9 @@
 class ActiveRecord::Base
+
+  class << ActiveRecord::Base
+    alias_method :f, :find
+  end
+
   def self.method_missing(method, *args)
     if method.to_s.starts_with?("fb")
       remainder = method.to_s[2..-1]
