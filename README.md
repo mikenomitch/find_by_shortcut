@@ -19,11 +19,15 @@ and "email", you can use find_by_shortcut as follows:
 User.fbi 1
 - equivalent of User.find_by_id(1)
 
+
 User.fbu "OkinawaSteel"
 - equivalent of User.find_by_username("OkinawaSteel")
 
+
 User.fbe "email@isp.com"
+
 User.fbem "email@isp.com"
+
 User.fbemail "email@isp.com"
 
 - All equivalents of User.find_by_email("email@isp.com")
