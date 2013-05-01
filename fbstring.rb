@@ -4,13 +4,13 @@ class ActiveRecord::Base
       remainder = method.to_s[2..-1]
       attribute = self.new.attributes.keys.select{|e| e.starts_with?(remainder)}.first
       if attribute == nil
-        super *args
+        super
       else
         new_method = "find_by_" + attribute
         send(new_method.to_s, args)
       end
     else
-      super *args
+      super
     end
   end
 end
