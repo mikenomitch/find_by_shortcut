@@ -16,8 +16,8 @@ EXAMPLE:
 If User inherits from ActiveRecord::Base, and has the following attributes: "id", "username",
 and "email", you can use find_by_shortcut as follows:
 
-User.fbi 1
-- equivalent of User.find_by_id(1)
+User.f 1
+- equivalent of User.find(1)
 
 
 User.fbu "OkinawaSteel"

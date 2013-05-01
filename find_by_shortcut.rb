@@ -1,4 +1,11 @@
 class ActiveRecord::Base
+
+  # Open the eigenclass of ActiveRecord::Base because we need to alias a static
+  # method.
+  class << ActiveRecord::Base
+    alias_method :f, :find
+  end
+
   def self.method_missing(method, *args)
     if method.to_s.starts_with?("fb")
       remainder = method.to_s[2..-1]
