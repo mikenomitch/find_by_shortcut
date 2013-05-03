@@ -22,6 +22,22 @@ class ActiveRecord::Base
   end
 end
 
+def f (value)
+  Rails.application.eager_load!
+  ActiveRecord::Base.descendants.each do |klass|
+    klass.new.attributes.keys.each do |attribute|
+      find_method = "find_by_" + attribute
+      if klass.columns_hash[attribute].type.to_s == value.class.to_s.downcase
+        item = klass.send(find_method, value)
+        if item != nil
+          return item
+        end
+      end
+    end
+  end
+  return nil
+end
+
 
 # class Class
 #   def method_missing(method, *args)
