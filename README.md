@@ -1,5 +1,3 @@
-= find_by_shortcut
-
 A module for faster Active Record queries in the ruby console.
 
 Allows for quick 'find_by_' calls on classes that inherit from ActiveRecord::Base.
